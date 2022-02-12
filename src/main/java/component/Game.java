@@ -12,17 +12,19 @@ public class Game {
 
     final DataPrinter dataPrinter;
 
+    final UserInputReader userInputReader;
+
     public Game(final NumberGenerator numberGenerator,
-                final DataPrinter dataPrinter) {
+                final DataPrinter dataPrinter, UserInputReader userInputReader) {
         this.numberGenerator = numberGenerator;
         this.dataPrinter = dataPrinter;
+        this.userInputReader = userInputReader;
     }
 
     public void play() {
         final int number = numberGenerator.generate();
         while (true) {
-             dataPrinter.printInfoMessage("Please type a number between 0 and 9:");
-            final int userCase = new Scanner(System.in).nextInt();
+            final int userCase = userInputReader.getUserInput();
             if (number > userCase) {
                 System.out.println("number > " + userCase + ". Try again:");
             } else if (number < userCase) {
