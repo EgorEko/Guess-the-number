@@ -10,14 +10,18 @@ public class Game {
 
     final NumberGenerator numberGenerator;
 
-    public Game(final NumberGenerator numberGenerator) {
+    final DataPrinter dataPrinter;
+
+    public Game(final NumberGenerator numberGenerator,
+                final DataPrinter dataPrinter) {
         this.numberGenerator = numberGenerator;
+        this.dataPrinter = dataPrinter;
     }
 
     public void play() {
         final int number = numberGenerator.generate();
         while (true) {
-            System.out.println("Please type a number between 0 and 9:");
+             dataPrinter.printInfoMessage("Please type a number between 0 and 9:");
             final int userCase = new Scanner(System.in).nextInt();
             if (number > userCase) {
                 System.out.println("number > " + userCase + ". Try again:");

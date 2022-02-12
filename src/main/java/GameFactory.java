@@ -1,5 +1,7 @@
+import component.DataPrinter;
 import component.Game;
 import component.NumberGenerator;
+import component.console.ConsoleDataPrinter;
 
 /**
  * @author devonline
@@ -12,6 +14,7 @@ public class GameFactory {
 
     public Game create(){
         final NumberGenerator numberGenerator = new NumberGenerator();
-        return new Game(numberGenerator);
+        final DataPrinter dataPrinter = new ConsoleDataPrinter();
+        return new Game(numberGenerator, dataPrinter);
     }
 }
