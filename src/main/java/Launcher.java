@@ -1,3 +1,5 @@
+import component.Game;
+
 /**
  * @author devonline
  * @link http://devonline.academy/java
