@@ -1,10 +1,10 @@
-#The Guess The Number Project
+ #The Guess The Number Project
 
 
-##Without JRE
+ ##Without JRE
 
 -------------------------------
-### Build instructions
+ ### Build instructions
 
 - Build distributions using maven tool:
 
@@ -15,7 +15,7 @@
   - target/guess-number-${project.version}-windows.zip for Windows
   - target/guess-number-${project.version}-unix.tar.gz for MacOS or Linux
   - 
-###Run instructions
+ ###Run instructions
   
 - Download OpenJDK 11;
 - Unzip the downloaded OpenJDK archive;
@@ -32,10 +32,10 @@
     - start.sh for MacOS or Linux;
 
 
-##With JRE
+ ##With JRE
 
 ---------------------------------------
-###Build instructions
+ ###Build instructions
 
 - Build distributions using maven tool:
 
@@ -47,7 +47,7 @@
   - target/guess-number-${project.version}-macos-with-jre.tar.gz for MacOS
   - target/guess-number-${project.version}-linux-with-jre.tar.gz for Linux
 
-###Run instructions
+ ###Run instructions
 
 - Unzip the Guess The Number distribution:
   - Unzip guess-number-${project.version}-windows-with-jre.zip for Windows;
@@ -59,7 +59,7 @@
   - start.sh for MacOS or Linux;
 
 
-##Readme tutorial
+ ##Readme tutorial
 
 -------------------------------------
 - https://guides.github.com/features/mastering-markdown/
