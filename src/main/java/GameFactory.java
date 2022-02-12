@@ -1,8 +1,6 @@
-import component.DataPrinter;
-import component.Game;
-import component.NumberGenerator;
-import component.UserInputReader;
+import component.*;
 import component.console.ConsoleDataPrinter;
+import component.console.ConsoleGameOverHandler;
 import component.console.ConsoleUserInputReader;
 
 /**
@@ -18,6 +16,7 @@ public class GameFactory {
         final NumberGenerator numberGenerator = new NumberGenerator();
         final DataPrinter dataPrinter = new ConsoleDataPrinter();
         final UserInputReader userInputReader = new ConsoleUserInputReader(dataPrinter);
-        return new Game(numberGenerator, dataPrinter, userInputReader);
+        final GameOverHandler gameOverHandler = new ConsoleGameOverHandler();
+        return new Game(numberGenerator, dataPrinter, userInputReader, gameOverHandler);
     }
 }

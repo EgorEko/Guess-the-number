@@ -1,7 +1,5 @@
 package component;
 
-import java.util.Scanner;
-
 /**
  * @author devonline
  * @link http://devonline.academy/java
@@ -14,11 +12,14 @@ public class Game {
 
     final UserInputReader userInputReader;
 
+    final GameOverHandler gameOverHandler;
+
     public Game(final NumberGenerator numberGenerator,
-                final DataPrinter dataPrinter, UserInputReader userInputReader) {
+                final DataPrinter dataPrinter, UserInputReader userInputReader, GameOverHandler gameOverHandler) {
         this.numberGenerator = numberGenerator;
         this.dataPrinter = dataPrinter;
         this.userInputReader = userInputReader;
+        this.gameOverHandler = gameOverHandler;
     }
 
     public void play() {
@@ -31,8 +32,7 @@ public class Game {
                 System.out.println("number < " + userCase + ". Try again:");
             } else {
                 System.out.println("Congratulations, you guessed the number!");
-                // Wait for enter pressed
-                new Scanner(System.in).nextLine();
+                gameOverHandler.gameOver();
                 break;
             }
         }

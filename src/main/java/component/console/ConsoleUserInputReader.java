@@ -24,7 +24,7 @@ public class ConsoleUserInputReader implements UserInputReader {
             final String line = new Scanner(System.in).nextLine();
             if (line.length() == 1) {
                 final char ch = line.charAt(0);
-                if (ch >= '1' && ch <= '9') {
+                if (ch >= '0' && ch <= '9') {
                     return Integer.parseInt(line);
                 }
             }
