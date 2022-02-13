@@ -1,8 +1,12 @@
 import component.*;
+import component.config.CommandLineArgumentParser;
 import component.console.ConsoleDataPrinter;
 import component.console.ConsoleGameOverHandler;
 import component.console.ConsoleUserInputReader;
 import component.swing.GameWindow;
+import model.config.UserInterface;
+
+import static model.config.UserInterface.GUI;
 
 /**
  * @author devonline
@@ -10,7 +14,13 @@ import component.swing.GameWindow;
  */
 public class GameFactory {
 
+    private final UserInterface userInterface;
+
     public GameFactory(final String[] args) {
+        final CommandLineArgumentParser.CommandLineArguments commandLineArguments =
+                new CommandLineArgumentParser(args).parse();
+        userInterface = commandLineArguments.getUserInterface();
+
     }
 
     public Game create() {
@@ -18,8 +28,7 @@ public class GameFactory {
         final DataPrinter dataPrinter;
         final UserInputReader userInputReader;
         final GameOverHandler gameOverHandler;
-        //FIXME: Must be GUI mode
-        if (1 == 1) {
+        if (userInterface == GUI) {
             final GameWindow gameWindow = new GameWindow();
             dataPrinter = gameWindow;
             userInputReader = gameWindow;
